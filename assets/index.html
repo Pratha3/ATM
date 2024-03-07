@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #atm-container {
+      background-color: rgb(59, 59, 59);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+    }
+
+    #form-container {
+      padding: 20px;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #070707;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #2f0179;
+    }
+
+    button.exit {
+      background-color: red;
+    }
+
+    button.exit:hover {
+      background-color: mediumseagreen;
+    }
+
+    #result-container {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="atm-container">
+    <h1>ATM</h1>
+    <div id="form-container">
+      <button onclick="check('check.html')">Check Balance</button>
+      <button onclick="deposit('deposit.html')">Deposit</button>
+      <button onclick="withdraw('withdraw.html')">Withdraw</button>
+      <button onclick="exit()" class="exit">Now Leave</button>
+
+      <script>
+        function check() {
+          window.location.href = './check.html';
+        }
+        function deposit() {
+          window.location.href = './deposit.html';
+        }
+        function withdraw() {
+          window.location.href = './withdraw.html'
+        }
+        function exit() {
+          window.location.href = '../login.html';
+        }
+
+      </script>
+
+</body>
+
+</html>

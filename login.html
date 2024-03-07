@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #login-container {
+      background-color:rgb(59, 59, 59);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+    }
+
+    #form-container {
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    button:hover{
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="login-container">
+    <div id="form-container">
+      <h2>Login</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter your username" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <br>
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const enteredUsername = document.getElementById('username').value;
+      const enteredPassword = document.getElementById('password').value;
+      const validUsername= 'pratha01';
+      const validPassword = '01234';
+
+      if (enteredUsername === validUsername && enteredPassword === validPassword) {
+        window.location.href = './assets./index.html';
+      } else {
+        alert('Invalid username and password.');
+      }
+
+    }
+  </script>
+
+</body>
+</html>

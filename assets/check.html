@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #atm-container {
+      background-color:rgb(59, 59, 59);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+    }
+
+    #form-container {
+      padding: 20px;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #070707;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+button:hover{
+    background-color:#2f0179;
+}
+    button.exit {
+      background-color:red;
+    }
+    button.exit:hover{
+        background-color: mediumseagreen;
+    }
+
+    #result-container {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="atm-container">
+    <h1>ATM</h1>
+    <div id="form-container">
+      <label for="pin">PIN:</label>
+      <input type="password" id="pin" placeholder="Enter PIN" required>
+      <button onclick="CheckBalance()">Check Balance</button>
+      <button onclick="exit()" class="exit">Now Leave</button>
+    </div>
+
+    <div id="result-container">Result:0</div>
+  </div>
+
+  <script>
+    const correctPassword = '1234';
+    let accountBalance = 1000;
+    function authenticate() {
+      const enteredPassword = document.getElementById('pin').value;
+      return enteredPassword === correctPassword;
+    }
+
+    function CheckBalance() {
+      if (authenticate()) {
+        displayResult(`Your account balance is ${accountBalance}`);
+      } else {
+        displayResult('Invalid password.');
+      }
+    }
+
+    function exit() {
+      window.location.href = './index.html';
+    }
+
+    function displayResult(message) {
+      document.getElementById('result-container').innerText = message;
+    }
+    
+  </script>
+
+</body>
+</html>
